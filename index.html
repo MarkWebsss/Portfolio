@@ -1,87 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; color: #333; }
-    header { background: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; }
-    nav a { margin: 0 1rem; text-decoration: none; color: #333; font-weight: bold; }
-    nav a:hover { color: #007BFF; }
-    section { max-width: 1000px; margin: auto; padding: 2rem; }
-    .hero { text-align: center; background: linear-gradient(to bottom, #e0f0ff, #fff); padding: 4rem 2rem; }
-    .hero img { border-radius: 50%; width: 150px; height: 150px; object-fit: cover; }
-    .btn { display: inline-block; background: #007BFF; color: white; padding: 0.75rem 1.5rem; border-radius: 5px; text-decoration: none; margin-top: 1rem; }
-    .btn:hover { background: #0056b3; }
-    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-    .card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-    .card img { width: 100%; height: 150px; object-fit: cover; }
-    .card h4 { margin: 1rem; }
-    .card p { margin: 0 1rem 1rem; color: #555; }
-    footer { background: #fff; text-align: center; padding: 1rem; margin-top: 2rem; box-shadow: 0 -2px 5px rgba(0,0,0,0.1); }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo Portfolio - Mark Corpuz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-  <header>
-    <h1>MyPortfolio</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-indigo-600">Mark Corpuz</a>
+      <nav class="space-x-6 text-gray-600 font-medium">
+        <a href="#about" class="hover:text-indigo-600">About</a>
+        <a href="#projects" class="hover:text-indigo-600">Projects</a>
+        <a href="#contact" class="hover:text-indigo-600">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <img src="https://via.placeholder.com/150" alt="Profile Photo">
-    <h2>Hi, I'm Mark</h2>
-    <p>Web Developer | Designer | Problem Solver</p>
-    <a href="#projects" class="btn">View My Work</a>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <h3>About Me</h3>
-    <p>
-      I'm a passionate developer with experience in building dynamic and responsive websites.
-      Skilled in HTML, CSS, JavaScript, Laravel, and PHP, I create user-friendly web applications
-      with clean design and efficient code.
+  <!-- Hero Section -->
+  <section id="about" class="max-w-4xl mx-auto px-6 py-20 text-center">
+    <h1 class="text-4xl font-extrabold mb-4">Hi, I’m Mark Corpuz</h1>
+    <p class="text-lg text-gray-600 mb-8 max-w-xl mx-auto">
+      A passionate web developer specializing in modern frontend and backend technologies. I love crafting beautiful, functional websites and applications.
     </p>
+    <a href="#projects" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">
+      View My Work
+    </a>
   </section>
 
-  <!-- Projects -->
-  <section id="projects">
-    <h3>Projects</h3>
-    <div class="projects">
-      <div class="card">
-        <img src="https://via.placeholder.com/400x250" alt="Project One">
-        <h4>Project One</h4>
-        <p>A web app that helps users manage tasks efficiently.</p>
+  <!-- Projects Section -->
+  <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
+    <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      
+      <!-- Project Card 1 -->
+      <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-3">Project One</h3>
+        <p class="text-gray-600 mb-4">
+          A responsive web app built with React and Tailwind CSS to manage tasks efficiently.
+        </p>
+        <a href="#" class="text-indigo-600 font-semibold hover:underline">View Demo</a>
       </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/400x250" alt="Project Two">
-        <h4>Project Two</h4>
-        <p>An e-commerce platform with real-time product updates.</p>
+
+      <!-- Project Card 2 -->
+      <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-3">Project Two</h3>
+        <p class="text-gray-600 mb-4">
+          An e-commerce platform using Laravel backend and Vue.js frontend.
+        </p>
+        <a href="#" class="text-indigo-600 font-semibold hover:underline">View Demo</a>
       </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/400x250" alt="Project Three">
-        <h4>Project Three</h4>
-        <p>A portfolio website showcasing my design and dev skills.</p>
+
+      <!-- Project Card 3 -->
+      <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-3">Project Three</h3>
+        <p class="text-gray-600 mb-4">
+          Portfolio website template created entirely with Tailwind CSS.
+        </p>
+        <a href="#" class="text-indigo-600 font-semibold hover:underline">View Demo</a>
       </div>
+
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h3>Contact Me</h3>
-    <p>Have a project in mind? Let's talk!</p>
-    <a href="mailto:youremail@example.com" class="btn">Email Me</a>
+  <!-- Contact Section -->
+  <section id="contact" class="bg-indigo-600 py-20 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+      <p class="mb-8">Feel free to reach out for collaborations or just a friendly hello!</p>
+      <a href="mailto:mark.corpuz@example.com" class="inline-block bg-white text-indigo-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition">
+        Email Me
+      </a>
+    </div>
   </section>
 
-  <footer>
-    &copy; 2025 MyPortfolio. All rights reserved.
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-6 text-center text-gray-500">
+    &copy; 2025 Mark Corpuz. All rights reserved.
   </footer>
 
 </body>
