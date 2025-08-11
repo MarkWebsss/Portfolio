@@ -5,13 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mark Corpuz - Web Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  
 </head>
+
+<style>
+  /* Typing animation */
+  .typing {
+    overflow: hidden;           /* Ensures the text is hidden until "typed" */
+    border-right: 2px solid;    /* Cursor */
+    white-space: nowrap;
+    animation: typing 3s steps(20) forwards, blink-caret 0.75s step-end infinite;
+    width: 0;                  
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 13ch }          /* Adjust to number of characters */
+  }
+
+  @keyframes blink-caret {
+    50% { border-color: transparent }
+    100% { border-color: inherit }
+  }
+</style>
+
 <body class="bg-gray-100 text-gray-800">
 
   <!-- Header -->
-  <header class="bg-white shadow-md sticky top-0 z-10">
-    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+  <header class="bg-white shadow-md sticky top-0 w-full">
+    <div class="w-full px-6 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold text-indigo-600">Mark Corpuz</h1>
       <nav>
         <ul class="flex space-x-6 text-indigo-600 font-medium">
@@ -24,24 +45,64 @@
     </div>
   </header>
 
-  <!-- About Me -->
-  <section id="about" class="max-w-4xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center md:items-start gap-8">
-    <!-- Text content -->
-    <div class="md:w-1/2">
-      <h2 class="text-3xl font-semibold mb-4">About Me</h2>
-      <p class="text-sm leading-relaxed text-justify">
-        Hi there! I am Mark Angelo Corpuz, a passionate web developer and fresh graduate from Cagayan State University Aparri Campus.
-        I love building clean, efficient websites and constantly learning new technologies.
-        In my free time, I enjoy gaming and exploring new tech trends. As a self-taught developer, I have honed my skills in HTML, CSS, JavaScript, and PHP, with a focus on Laravel and Tailwind CSS.
-        I am eager to apply my knowledge in real-world projects and collaborate with others in the tech community.
-      </p>
+<section id="about" class="max-w-4xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center md:items-start gap-12">
+
+  <!-- Left: Text + socials + button -->
+  <div class="md:w-1/2 flex flex-col">
+
+    <h2 class="text-3xl font-semibold mb-4">Hi, I'm <span class="text-indigo-600">Mark!</span></h2>
+    <h2 class="text-3xl font-semibold mb-4">
+      I'm a 
+      <span class="text-indigo-600 typing">
+        Web Developer
+      </span>
+    </h2>
+
+    <p class="text-sm leading-relaxed text-justify mb-6">
+      Hi there! I am Mark Angelo Corpuz, a passionate web developer and fresh graduate from Cagayan State University Aparri Campus.
+      I love building clean, efficient websites and constantly learning new technologies.
+      In my free time, I enjoy gaming and exploring new tech trends. As a self-taught developer, I have honed my skills in HTML, CSS, JavaScript, and PHP, with a focus on Laravel and Tailwind CSS.
+      I am eager to apply my knowledge in real-world projects and collaborate with others in the tech community.
+    </p>
+
+    <!-- Social Icons -->
+    <div class="flex space-x-8 text-indigo-600 mb-6">
+      <!-- GitHub -->
+      <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub" class="transform transition-transform duration-300 hover:scale-110 hover:text-indigo-800 hover:drop-shadow-lg" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.415-4.033-1.415-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.729.083-.729 1.205.086 1.84 1.238 1.84 1.238 1.07 1.835 2.807 1.305 3.492.997.107-.775.42-1.305.763-1.605-2.665-.305-5.466-1.337-5.466-5.931 0-1.31.467-2.38 1.235-3.22-.124-.303-.535-1.527.117-3.176 0 0 1.007-.322 3.3 1.23a11.47 11.47 0 013.003-.404c1.02.004 2.047.137 3.003.403 2.29-1.553 3.295-1.23 3.295-1.23.655 1.65.243 2.874.12 3.176.77.84 1.23 1.91 1.23 3.22 0 4.61-2.807 5.624-5.48 5.92.43.37.823 1.102.823 2.222v3.293c0 .322.22.694.825.576C20.565 21.795 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+        </svg>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn" class="transform transition-transform duration-300 hover:scale-110 hover:text-indigo-800 hover:drop-shadow-lg" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75c.96 0 1.75.79 1.75 1.75s-.79 1.75-1.75 1.75zm13.5 11.27h-3v-5.5c0-1.38-1.12-2.5-2.5-2.5s-2.5 1.12-2.5 2.5v5.5h-3v-10h3v1.5c.68-1.03 2.31-1.5 3.5-1.5 2.48 0 4.5 2.02 4.5 4.5v5.5z" />
+        </svg>
+      </a>
+
+      <!-- Twitter -->
+      <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter" class="transform transition-transform duration-300 hover:scale-110 hover:text-indigo-800 hover:drop-shadow-lg" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M23.954 4.569c-.885.39-1.83.654-2.825.775 1.014-.609 1.794-1.574 2.163-2.724-.95.564-2.005.974-3.127 1.195-.897-.959-2.178-1.559-3.594-1.559-2.723 0-4.93 2.206-4.93 4.93 0 .39.045.765.127 1.124-4.094-.205-7.725-2.164-10.158-5.144-.423.724-.666 1.562-.666 2.457 0 1.69.861 3.178 2.172 4.05-.8-.025-1.555-.246-2.213-.616v.062c0 2.367 1.684 4.342 3.918 4.785-.41.112-.843.171-1.29.171-.315 0-.623-.03-.921-.086.623 1.943 2.432 3.357 4.576 3.395-1.676 1.313-3.79 2.097-6.086 2.097-.395 0-.786-.023-1.17-.067 2.172 1.392 4.75 2.205 7.52 2.205 9.025 0 13.969-7.48 13.969-13.969 0-.21 0-.423-.015-.633.962-.695 1.8-1.562 2.46-2.549z" />
+        </svg>
+      </a>
     </div>
 
-    <!-- Image content -->
-    <div class="md:w-1/2 flex justify-center">
-      <img src="images/asdasd.png" alt="Mark Angelo Corpuz" class="rounded max-w-full h-auto object-cover" />
-    </div>
-  </section>
+    <!-- Hire Me Button -->
+    <a href="#contact" class="inline-block bg-indigo-600 text-white font-semibold px-6 py-3 rounded hover:bg-indigo-700 transition w-max">
+      Hire Me
+    </a>
+
+  </div>
+
+  <!-- Right: Image -->
+  <div class="md:w-1/2 flex justify-center">
+    <img src="images/asdasd.png" alt="Mark Angelo Corpuz" class="rounded-full shadow-lg object-cover" />
+  </div>
+
+</section>
+
 
 
   <!-- Projects -->
