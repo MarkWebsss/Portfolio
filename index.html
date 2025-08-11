@@ -3,82 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Demo Portfolio - Mark Corpuz</title>
+  <title>Mark Corpuz - Web Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-100 text-gray-800">
 
   <!-- Header -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold text-indigo-600">Mark Corpuz</a>
-      <nav class="space-x-6 text-gray-600 font-medium">
-        <a href="#about" class="hover:text-indigo-600">About</a>
-        <a href="#projects" class="hover:text-indigo-600">Projects</a>
-        <a href="#contact" class="hover:text-indigo-600">Contact</a>
+  <header class="bg-white shadow-md sticky top-0 z-10">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-600">Mark Corpuz</h1>
+      <nav>
+        <ul class="flex space-x-6 text-indigo-600 font-medium">
+          <li><a href="#about" class="hover:underline">About</a></li>
+          <li><a href="#projects" class="hover:underline">Projects</a></li>
+          <li><a href="#skills" class="hover:underline">Skills</a></li>
+          <li><a href="#contact" class="hover:underline">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="about" class="max-w-4xl mx-auto px-6 py-20 text-center">
-    <h1 class="text-4xl font-extrabold mb-4">Hi, I’m Mark Corpuz</h1>
-    <p class="text-lg text-gray-600 mb-8 max-w-xl mx-auto">
-      A passionate web developer specializing in modern frontend and backend technologies. I love crafting beautiful, functional websites and applications.
+  <!-- About Me -->
+  <section id="about" class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-semibold mb-4">About Me</h2>
+    <p class="text-lg leading-relaxed">
+      I am a passionate web developer and fresh graduate from Cagayan State University Aparri Campus.
+      I love building clean, efficient websites and constantly learning new technologies.
+      In my free time, I enjoy gaming and exploring new tech trends.
     </p>
-    <a href="#projects" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">
-      View My Work
-    </a>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
-    <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
-    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-      
-      <!-- Project Card 1 -->
-      <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold mb-3">Project One</h3>
-        <p class="text-gray-600 mb-4">
-          A responsive web app built with React and Tailwind CSS to manage tasks efficiently.
-        </p>
-        <a href="#" class="text-indigo-600 font-semibold hover:underline">View Demo</a>
+  <!-- Projects -->
+  <section id="projects" class="bg-white py-12">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-semibold mb-8 text-center text-indigo-600">Projects</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Project 1 -->
+        <div class="border rounded-lg shadow-sm p-6 hover:shadow-lg transition-shadow">
+          <h3 class="text-xl font-bold mb-2">AparriQuest - Shop Finder</h3>
+          <p class="mb-3">A web app supporting local businesses in Aparri with shop location maps and product listings.</p>
+          <p class="mb-3"><strong>Technologies:</strong> Laravel, Tailwind CSS, Alpine.js, MySQL</p>
+          <a href="#" class="text-indigo-600 hover:underline font-semibold">View Project</a>
+        </div>
+        <!-- Project 2 -->
+        <div class="border rounded-lg shadow-sm p-6 hover:shadow-lg transition-shadow">
+          <h3 class="text-xl font-bold mb-2">Personal Blog</h3>
+          <p class="mb-3">A blog where I share tutorials and tech insights related to web development.</p>
+          <p class="mb-3"><strong>Technologies:</strong> Next.js, Markdown, Tailwind CSS</p>
+          <a href="#" class="text-indigo-600 hover:underline font-semibold">View Blog</a>
+        </div>
       </div>
-
-      <!-- Project Card 2 -->
-      <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold mb-3">Project Two</h3>
-        <p class="text-gray-600 mb-4">
-          An e-commerce platform using Laravel backend and Vue.js frontend.
-        </p>
-        <a href="#" class="text-indigo-600 font-semibold hover:underline">View Demo</a>
-      </div>
-
-      <!-- Project Card 3 -->
-      <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold mb-3">Project Three</h3>
-        <p class="text-gray-600 mb-4">
-          Portfolio website template created entirely with Tailwind CSS.
-        </p>
-        <a href="#" class="text-indigo-600 font-semibold hover:underline">View Demo</a>
-      </div>
-
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="bg-indigo-600 py-20 text-white">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-      <p class="mb-8">Feel free to reach out for collaborations or just a friendly hello!</p>
-      <a href="mailto:mark.corpuz@example.com" class="inline-block bg-white text-indigo-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition">
+  <!-- Skills -->
+  <section id="skills" class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-semibold mb-6">Skills & Tools</h2>
+    <ul class="grid grid-cols-2 sm:grid-cols-3 gap-4 list-disc list-inside text-lg">
+      <li>HTML / CSS / JavaScript</li>
+      <li>Laravel / PHP</li>
+      <li>Tailwind CSS</li>
+      <li>MySQL / Database Design</li>
+      <li>Alpine.js / Vue.js basics</li>
+      <li>Git / GitHub</li>
+      <li>Problem Solving & Debugging</li>
+      <li>Team Collaboration</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-indigo-600 text-white py-12">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-semibold mb-4">Get in Touch</h2>
+      <p class="mb-6 text-lg">Feel free to reach out to me for projects, collaborations, or just to say hi!</p>
+      <a href="mailto:mark@example.com" class="inline-block bg-white text-indigo-600 font-bold px-6 py-3 rounded hover:bg-gray-100 transition">
         Email Me
       </a>
+      <div class="mt-6 flex justify-center space-x-6">
+        <a href="https://github.com/MarkWebsss/" target="_blank" class="hover:text-gray-300">GitHub</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" class="hover:text-gray-300">LinkedIn</a>
+        <a href="https://twitter.com/yourusername" target="_blank" class="hover:text-gray-300">Twitter</a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-100 py-6 text-center text-gray-500">
+  <footer class="bg-gray-800 text-gray-400 text-center py-4">
     &copy; 2025 Mark Corpuz. All rights reserved.
   </footer>
 
