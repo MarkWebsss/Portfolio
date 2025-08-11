@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
 
 <style>
@@ -50,8 +51,8 @@
   <!-- Left: Text + socials + button -->
   <div class="md:w-1/2 flex flex-col">
 
-    <h2 class="text-3xl font-semibold mb-4">Hi, I'm <span class="text-indigo-600">Mark!</span></h2>
-    <h2 class="text-3xl font-semibold mb-4">
+    <h2 class="text-4xl font-semibold mb-4">Hi, I'm <span class="text-indigo-600 font-bold">Mark!</span></h2>
+    <h2 class="text-2xl font-semibold mb-4">
       I'm a 
       <span class="text-indigo-600 typing">
         Web Developer.
@@ -110,23 +111,71 @@
     <h2 class="text-3xl font-semibold mb-12 text-center text-indigo-600">Projects</h2>
     <div class="grid md:grid-cols-2 gap-10">
       
-      <!-- Project 1 -->
-      <div class="border rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300 transform hover:scale-[1.03]">
-        <img src="https://via.placeholder.com/600x300?text=AparriQuest" alt="AparriQuest Project Screenshot" class="rounded-md mb-4 object-cover w-full h-48" />
+    <!-- Project 1 -->
+    <div class="border rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-[1.03] flex flex-col h-full">
+
+      <!-- Image Slider -->
+      <div class="relative w-full h-72 overflow-hidden" id="slider">
+        <div class="flex transition-transform duration-700 ease-in-out" id="sliderTrack">
+          <img src="images/aparri1.jpg" class="w-full h-72 object-cover rounded-t-lg flex-shrink-0" alt="Slide 1">
+          <img src="images/aparri2.jpg" class="w-full h-72 object-cover rounded-t-lg flex-shrink-0" alt="Slide 2">
+          <img src="images/aparri3.jpg" class="w-full h-72 object-cover rounded-t-lg flex-shrink-0" alt="Slide 3">
+        </div>
+
+        <!-- Dots -->
+        <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2" id="sliderDots">
+          <div class="w-3 h-3 rounded-full bg-white cursor-pointer"></div>
+          <div class="w-3 h-3 rounded-full bg-gray-400 cursor-pointer"></div>
+          <div class="w-3 h-3 rounded-full bg-gray-400 cursor-pointer"></div>
+        </div>
+      </div>
+
+      <!-- Bottom Content -->
+      <div class="p-6 flex flex-col flex-grow justify-end">
         <h3 class="text-xl font-bold mb-3">AparriQuest - Shop Finder</h3>
         <p class="mb-4 text-gray-700">A web app supporting local businesses in Aparri with shop location maps and product listings.</p>
         <div class="flex flex-wrap gap-2 mb-4">
           <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Laravel</span>
           <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Tailwind CSS</span>
-          <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Alpine.js</span>
+          <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
           <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">MySQL</span>
         </div>
         <a href="#" class="inline-block bg-indigo-600 text-white px-5 py-2 rounded-md font-semibold hover:bg-indigo-700 transition">View Project</a>
       </div>
-      
-      <!-- Project 2 -->
-      <div class="border rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300 transform hover:scale-[1.03]">
-        <img src="https://via.placeholder.com/600x300?text=Personal+Blog" alt="Personal Blog Screenshot" class="rounded-md mb-4 object-cover w-full h-48" />
+    </div>
+
+    <script>
+      const sliderTrack = document.getElementById('sliderTrack');
+      const dots = document.querySelectorAll('#sliderDots div');
+      let index = 0;
+      const totalSlides = dots.length;
+
+      function goToSlide(i) {
+        sliderTrack.style.transform = `translateX(-${i * 100}%)`;
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('bg-white', idx === i);
+          dot.classList.toggle('bg-gray-400', idx !== i);
+        });
+        index = i;
+      }
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => goToSlide(i));
+      });
+
+      setInterval(() => {
+        goToSlide((index + 1) % totalSlides);
+      }, 3000);
+    </script>
+
+    <!-- Project 2 -->
+    <div class="border rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-[1.03] overflow-hidden">
+      <div class="relative w-full h-48">
+        <img id="slider2" src="https://via.placeholder.com/600x300?text=Personal+Blog+1" 
+            alt="Personal Blog Screenshot" 
+            class="rounded-md object-cover w-full h-full transition-opacity duration-700 opacity-100" />
+      </div>
+      <div class="p-6">
         <h3 class="text-xl font-bold mb-3">Personal Blog</h3>
         <p class="mb-4 text-gray-700">A blog where I share tutorials and tech insights related to web development.</p>
         <div class="flex flex-wrap gap-2 mb-4">
@@ -136,6 +185,26 @@
         </div>
         <a href="#" class="inline-block bg-indigo-600 text-white px-5 py-2 rounded-md font-semibold hover:bg-indigo-700 transition">View Blog</a>
       </div>
+    </div>
+
+    <script>
+      const images2 = [
+        "https://via.placeholder.com/600x300?text=Personal+Blog+1",
+        "https://via.placeholder.com/600x300?text=Personal+Blog+2",
+        "https://via.placeholder.com/600x300?text=Personal+Blog+3"
+      ];
+      let current2 = 0;
+      const imgEl2 = document.getElementById("slider2");
+
+      setInterval(() => {
+        imgEl2.classList.add("opacity-0");
+        setTimeout(() => {
+          current2 = (current2 + 1) % images2.length;
+          imgEl2.src = images2[current2];
+          imgEl2.classList.remove("opacity-0");
+        }, 500);
+      }, 3000);
+    </script>
 
     </div>
   </div>
