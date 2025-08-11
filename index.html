@@ -10,18 +10,21 @@
 
 <style>
   .typing {
-    display: inline-block; /* Needed so width animates */
-    vertical-align: bottom; /* Aligns with baseline text */
+    display: inline-block; 
+    vertical-align: bottom; 
     overflow: hidden;
     border-right: 2px solid;
     white-space: nowrap;
-    animation: typing 2s steps(15) infinite alternate,
-               blink-caret 0.15s step-end infinite;
+    animation: typing 4s steps(14) infinite alternate,
+               blink-caret 0.75s step-end infinite;
   }
 
+  /* Pauses at start and end */
   @keyframes typing {
-    from { width: 0 }
-    to { width: 15ch } /* 13 characters for "Web Developer." */
+    0%   { width: 0ch }
+    40%  { width: 14ch } /* fully typed */
+    60%  { width: 14ch } /* hold before deleting */
+    100% { width: 0ch }
   }
 
   @keyframes blink-caret {
