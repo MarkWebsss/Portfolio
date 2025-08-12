@@ -9,26 +9,13 @@
 </head>
 
 <style>
-  .typing {
-    display: inline-block; 
-    vertical-align: bottom; 
-    overflow: hidden;
+  html {
+    scroll-behavior: smooth;
+  }
+  #typing-text {
     border-right: 2px solid;
+    padding-right: 4px;
     white-space: nowrap;
-    animation: typing 4s steps(14) infinite alternate,
-               blink-caret 0.75s step-end infinite;
-  }
-
-  /* Pauses at start and end */
-  @keyframes typing {
-    0%   { width: 0ch }
-    40%  { width: 14ch } /* fully typed */
-    60%  { width: 14ch } /* hold before deleting */
-    100% { width: 0ch }
-  }
-
-  @keyframes blink-caret {
-    50% { border-color: transparent }
   }
 </style>
 
@@ -57,9 +44,7 @@
     <h2 class="text-4xl font-semibold mb-4">Hi, I'm <span class="text-indigo-600 font-bold">Mark!</span></h2>
     <h2 class="text-2xl font-semibold mb-4">
       I'm a 
-      <span class="text-indigo-600 typing">
-        Web Developer.
-      </span>
+      <span id="typing-text" class="text-indigo-600"></span>
     </h2>
 
     <p class="text-sm leading-relaxed text-justify mb-6">
@@ -316,6 +301,38 @@
     }
   });
   </script>
+
+<script>
+  const roles = ["Web Developer", "UI/UX Designer"];
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typingSpeed = 120; // speed per letter
+  let pauseTime = 1500;  // pause after full word
+
+  function typeEffect() {
+    const currentRole = roles[roleIndex];
+    const displayText = isDeleting
+      ? currentRole.substring(0, charIndex - 1)
+      : currentRole.substring(0, charIndex + 1);
+
+    document.getElementById("typing-text").textContent = displayText;
+
+    if (!isDeleting && charIndex === currentRole.length) {
+      setTimeout(() => { isDeleting = true; }, pauseTime);
+    } 
+    else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
+
+    charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
+
+    setTimeout(typeEffect, isDeleting ? typingSpeed / 2 : typingSpeed);
+  }
+
+  typeEffect();
+</script>
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-gray-400 text-center py-4">
